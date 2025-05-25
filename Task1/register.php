@@ -178,10 +178,10 @@ function togglePassword() {
 
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        button.textContent = "Ẩn";
+        button.textContent = "Hide";
     } else {
         passwordInput.type = "password";
-        button.textContent = "Hiện";
+        button.textContent = "Show";
     }
 }
 </script>
@@ -208,7 +208,7 @@ function togglePassword() {
                     background: #f5e4e9;
                     border-radius: 15px;
                     cursor: pointer;
-                ">Hiện</button>
+                ">Show</button>
             </div>
         </div>
     </div>
