@@ -1,53 +1,47 @@
 # TASK 1
 
-> Nhiệm vụ của task 1 là:
-> 
-> - Dev 1 trang web có chức năng cơ bản là đăng ký, đăng nhập, hiển thị thông tin tài khoản (tên, giới tính, email, địa chỉ, sdt), search người dùng
-> - Phần client thì không cần quá đẹp
-> - Phần server thì chọn ngôn ngữ PHP và database MySQL
-
 ## I. Demo web
 
 1. Trang chủ
 
 ![image.png](image.png)
 
-1. Trang đăng ký
+2. Trang đăng ký
 
 ![image.png](image%201.png)
 
-1. Trang đăng nhập
+3. Trang đăng nhập
 
 ![image.png](image%202.png)
 
-1. Màn hình sau khi đăng nhập
+4. Màn hình sau khi đăng nhập
 
 ![image.png](image%203.png)
 
-1. Chức năng tìm kiếm
+5. Chức năng tìm kiếm
 
 ![image.png](image%204.png)
 
-1. Chức năng xem thông tin cá nhân
+6. Chức năng xem thông tin cá nhân
 
 ![image.png](image%205.png)
 
-1. Cơ sở dữ liệu
+7. Cơ sở dữ liệu
 
 ![image.png](image%206.png)
 
 ## II. Quy trình tạo trang web
 
 - Để tạo trang web đáp ứng được yêu cầu, mình đã chia làm các bước như sau:
-🔹 Bước 1: Tạo database và bảng `users` trong XAMPP để làm cơ sở dữ liệu lưu thông tin người dùng. CSDL này bao gồm các trường id (khóa chính, tự động tăng), username, password, name, gender, email, address, phone
-🔹 Bước 2: Tạo file trang chủ `index.php` và file `db.php` để kết nối database
-🔹 Bước 3: Tạo giao diện form đăng ký (`register.php`) với form HTML để người dùng nhập thông tin
-🔹 Bước 4: Tạo trang xử lý đăng ký (`register_file.php`) để nhận dữ liệu từ form đăng ký. Trang này sử dụng PHP để kiểm tra dữ liệu (ví dụ: email hợp lệ, username không trùng), lưu thông tin vào bảng users bằng truy vấn SQL INSERT, chuyển hướng người dùng về trang đăng nhập sau khi đăng ký thành công
-🔹 Bước 5: Tạo form đăng nhập (`login.php`) với form HTML để người dùng nhập username và password
-🔹 Bước 6: Xử lý đăng nhập (`login_file.php`). Trang này nhận dữ liệu từ form đăng nhập, truy vấn database để kiểm tra username và xác minh mật khẩu, tạo session cho người dùng nếu đăng nhập thành công và chuyển hướng đến trang profile.php
-🔹 Bước 7: Hiển thị thông tin người dùng (`profile.php`) để hiển thị thông tin tài khoản (tên, giới tính, email, địa chỉ, số điện thoại) từ session hiện tại. Sử dụng truy vấn SQL SELECT để lấy dữ liệu từ bảng users dựa trên username
-🔹 Bước 8: Search người dùng qua username (`search.php`) với form tìm kiếm bằng username. Khi người dùng nhập username và gửi, file này sẽ sử dụng truy vấn SQL SELECT để tìm kiếm người dùng trong bảng users, hiển thị thông tin (tên, email, v.v.) của người dùng khớp với username được nhập
-🔹 Bước 8: Chức năng logout (`logout.php`) để hủy session hiện tại bằng session_destroy(), chuyển hướng người dùng về trang chủ
+  🔹 Bước 1: Tạo database và bảng `users` trong XAMPP để làm cơ sở dữ liệu lưu thông tin người dùng. CSDL này bao gồm các trường id (khóa chính, tự động tăng), username, password, name, gender, email, address, phone
+  🔹 Bước 2: Tạo file trang chủ `index.php` và file `db.php` để kết nối database
+  🔹 Bước 3: Tạo giao diện form đăng ký (`register.php`) với form HTML để người dùng nhập thông tin
+  🔹 Bước 4: Tạo trang xử lý đăng ký (`register_file.php`) để nhận dữ liệu từ form đăng ký. Trang này sử dụng PHP để kiểm tra dữ liệu (ví dụ: email hợp lệ, username không trùng), lưu thông tin vào bảng users bằng truy vấn SQL INSERT, chuyển hướng người dùng về trang đăng nhập sau khi đăng ký thành công
+  🔹 Bước 5: Tạo form đăng nhập (`login.php`) với form HTML để người dùng nhập username và password
+  🔹 Bước 6: Xử lý đăng nhập (`login_file.php`). Trang này nhận dữ liệu từ form đăng nhập, truy vấn database để kiểm tra username và xác minh mật khẩu, tạo session cho người dùng nếu đăng nhập thành công và chuyển hướng đến trang profile.php
+  🔹 Bước 7: Hiển thị thông tin người dùng (`profile.php`) để hiển thị thông tin tài khoản (tên, giới tính, email, địa chỉ, số điện thoại) từ session hiện tại. Sử dụng truy vấn SQL SELECT để lấy dữ liệu từ bảng users dựa trên username
+  🔹 Bước 8: Search người dùng qua username (`search.php`) với form tìm kiếm bằng username. Khi người dùng nhập username và gửi, file này sẽ sử dụng truy vấn SQL SELECT để tìm kiếm người dùng trong bảng users, hiển thị thông tin (tên, email, v.v.) của người dùng khớp với username được nhập
+  🔹 Bước 8: Chức năng logout (`logout.php`) để hủy session hiện tại bằng session_destroy(), chuyển hướng người dùng về trang chủ
 - Cấu trúc thư mục:
 
 ```python
@@ -64,11 +58,11 @@ web/
 ```
 
 - Phân biệt client và server:
-+ Client: Là phần giao diện người dùng (frontend), nơi người dùng tương tác trực tiếp với trang web (ví dụ: nhập thông tin, nhấn nút). Thường được viết bằng HTML, CSS, JavaScript và không xử lý logic phức tạp hay lưu trữ dữ liệu
-+ Server: Là phần backend, chịu trách nhiệm xử lý logic, lưu trữ và quản lý dữ liệu (ví dụ: xử lý đăng ký, kết nối với database). Thường sử dụng các ngôn ngữ như PHP và cơ sở dữ liệu như MySQL
+  + Client: Là phần giao diện người dùng (frontend), nơi người dùng tương tác trực tiếp với trang web (ví dụ: nhập thông tin, nhấn nút). Thường được viết bằng HTML, CSS, JavaScript và không xử lý logic phức tạp hay lưu trữ dữ liệu
+  + Server: Là phần backend, chịu trách nhiệm xử lý logic, lưu trữ và quản lý dữ liệu (ví dụ: xử lý đăng ký, kết nối với database). Thường sử dụng các ngôn ngữ như PHP và cơ sở dữ liệu như MySQL
 - So sánh HTML và PHP:
-+ HTML: Dùng để hiển thị nội dung, tạo giao diện người dùng
-+ PHP: Dùng để xử lý dữ liệu, logic phía máy chủ, thường được nhúng vào HTML để tạo ra trang web động
+  + HTML: Dùng để hiển thị nội dung, tạo giao diện người dùng
+  + PHP: Dùng để xử lý dữ liệu, logic phía máy chủ, thường được nhúng vào HTML để tạo ra trang web động
 
 ## III.  Source code
 
@@ -193,9 +187,9 @@ web/
     ```
     
     - Chức năng chính:
-    + Khởi tạo phiên đăng nhập bằng session_start() để lưu trữ thông tin người dùng
-    + Hiển thị lời chào tùy thuộc vào trạng thái đăng nhập: "Xin chào [Tên người dùng]" nếu đã đăng nhập, hoặc "Xin chào Khách" nếu chưa
-    + Cung cấp các chức năng tùy thuộc vào trạng thái đăng nhập: Nếu đã đăng nhập thì có 3 chức năng: "Tìm kiếm", "Xem thông tin cá nhân", "Đăng xuất". Nếu chưa đăng nhập thì chỉ có 2 chức năng: "Đăng nhập", "Đăng ký"
+      + Khởi tạo phiên đăng nhập bằng session_start() để lưu trữ thông tin người dùng
+      + Hiển thị lời chào tùy thuộc vào trạng thái đăng nhập: "Xin chào [Tên người dùng]" nếu đã đăng nhập, hoặc "Xin chào Khách" nếu chưa
+      + Cung cấp các chức năng tùy thuộc vào trạng thái đăng nhập: Nếu đã đăng nhập thì có 3 chức năng: "Tìm kiếm", "Xem thông tin cá nhân", "Đăng xuất". Nếu chưa đăng nhập thì chỉ có 2 chức năng: "Đăng nhập", "Đăng ký"
     - Ngôn ngữ: PHP, HTML, CSS (phần này mình dùng AI hết ;v)
 - b) `db.php`
     
@@ -215,9 +209,9 @@ web/
     
     - File `db.php` chịu trách nhiệm thiết lập kết nối giữa ứng dụng PHP và cơ sở dữ liệu MySQL.
     - Chức năng chính:
-    + Tạo kết nối tới cơ sở dữ liệu trên localhost sử dụng XAMPP
-    + Xử lý lỗi kết nối nếu có.
-    + Thiết lập bộ mã hóa ký tự UTF-8mb4 để hỗ trợ đầy đủ tiếng Việt
+      + Tạo kết nối tới cơ sở dữ liệu trên localhost sử dụng XAMPP
+      + Xử lý lỗi kết nối nếu có.
+      + Thiết lập bộ mã hóa ký tự UTF-8mb4 để hỗ trợ đầy đủ tiếng Việt
     - Ngôn ngữ: PHP
     
 - c) `register.php`
@@ -477,14 +471,14 @@ web/
     
     - File `register.php` cung cấp giao diện để người dùng đăng ký tài khoản với các thông tin cơ bản
     - Chức năng chính:
-    + Kết nối với file db.php để sử dụng cơ sở dữ liệu.
-    + Hiển thị form đăng ký với các trường: username, password, email, phone, address, và gender.
-    + Hiển thị thông báo lỗi (nếu có) qua thông số $_GET['error'].
-    + Cho phép người dùng chuyển hướng đến trang đăng nhập hoặc quay về trang chủ
+      + Kết nối với file db.php để sử dụng cơ sở dữ liệu.
+      + Hiển thị form đăng ký với các trường: username, password, email, phone, address, và gender.
+      + Hiển thị thông báo lỗi (nếu có) qua thông số $_GET['error'].
+      + Cho phép người dùng chuyển hướng đến trang đăng nhập hoặc quay về trang chủ
     - Ngôn ngữ:
-    + PHP: Kết nối database và xử lý dữ liệu đầu vào.
-    + HTML/CSS: Thiết kế form với giao diện đẹp, sử dụng font tùy chỉnh
-    + JavaScript: Thêm chức năng toggle để ẩn hoặc hiện mật khẩu
+      + PHP: Kết nối database và xử lý dữ liệu đầu vào.
+      + HTML/CSS: Thiết kế form với giao diện đẹp, sử dụng font tùy chỉnh
+      + JavaScript: Thêm chức năng toggle để ẩn hoặc hiện mật khẩu
 - d) `register_file.php`
     
     ```python
@@ -551,13 +545,13 @@ web/
     
     - File `register_file.php` xử lý dữ liệu đăng ký từ form trong register.php và lưu thông tin vào cơ sở dữ liệu
     - Chức năng chính:
-    + Nhận dữ liệu từ form đăng ký (username, password, email, phone, gender, address).
-    + Kiểm tra tính hợp lệ của dữ liệu (rỗng, email, số điện thoại, độ dài mật khẩu, trùng email).
-    + Lưu thông tin người dùng vào bảng users trong database.
-    + Chuyển hướng và thông báo kết quả (thành công hoặc lỗi).
+      + Nhận dữ liệu từ form đăng ký (username, password, email, phone, gender, address).
+      + Kiểm tra tính hợp lệ của dữ liệu (rỗng, email, số điện thoại, độ dài mật khẩu, trùng email).
+      + Lưu thông tin người dùng vào bảng users trong database.
+      + Chuyển hướng và thông báo kết quả (thành công hoặc lỗi).
     - Ngôn ngữ:
-    + PHP: Xử lý dữ liệu, kiểm tra tính hợp lệ và tương tác với database.
-    + MySQL: Lưu trữ dữ liệu người dùng trong bảng users
+      + PHP: Xử lý dữ liệu, kiểm tra tính hợp lệ và tương tác với database.
+      + MySQL: Lưu trữ dữ liệu người dùng trong bảng users
 - e) `login.php`
     
     ```python
@@ -739,8 +733,8 @@ web/
     
     - File `login.php` cung cấp giao diện để người dùng đăng nhập vào hệ thống với email và mật khẩu
     - Chức năng chính:
-    + Hiển thị form đăng nhập với các trường: email và password.
-    + Cho phép người dùng chuyển hướng đến trang đăng ký hoặc quay về trang chủ.
+      + Hiển thị form đăng nhập với các trường: email và password.
+      + Cho phép người dùng chuyển hướng đến trang đăng ký hoặc quay về trang chủ.
     - Ngôn ngữ:HTML/CSS: thiết kế giao diện form với font tùy chỉnh (NeueMachina, Poppins), hiệu ứng gradient nền từ hình ảnh
 - f) `login_file.php`
     
@@ -771,13 +765,13 @@ web/
     
     - File `login_file.php` xử lý dữ liệu đăng nhập từ form trong login.php và xác thực thông tin người dùng.
     - Chức năng chính:
-    + Nhận dữ liệu email và mật khẩu từ form đăng nhập.
-    + Xác thực thông tin đăng nhập bằng cách kiểm tra trong cơ sở dữ liệu.
-    + Tạo session cho người dùng nếu đăng nhập thành công và chuyển hướng về trang chủ.
-    + Thông báo lỗi nếu đăng nhập thất bại (email không tồn tại hoặc sai mật khẩu).
+      + Nhận dữ liệu email và mật khẩu từ form đăng nhập.
+      + Xác thực thông tin đăng nhập bằng cách kiểm tra trong cơ sở dữ liệu.
+      + Tạo session cho người dùng nếu đăng nhập thành công và chuyển hướng về trang chủ.
+      + Thông báo lỗi nếu đăng nhập thất bại (email không tồn tại hoặc sai mật khẩu).
     - Ngôn ngữ:
-    + PHP: Xử lý logic đăng nhập, quản lý session và truy vấn database.
-    + MySQL: Truy vấn bảng users để xác thực thông tin đăng nhập.
+      + PHP: Xử lý logic đăng nhập, quản lý session và truy vấn database.
+      + MySQL: Truy vấn bảng users để xác thực thông tin đăng nhập.
 - g) `profile.php`
     
     ```python
@@ -889,12 +883,12 @@ web/
     
     - File `profile.php` hiển thị thông tin cá nhân của người dùng đã đăng nhập.
     - Chức năng chính:
-    + Kiểm tra trạng thái đăng nhập và chuyển hướng về trang login.php nếu chưa đăng nhập.
-    + Hiển thị thông tin tài khoản (tên, giới tính, email, địa chỉ, số điện thoại) từ session.
-    + Có nút quay về trang chủ.
+      + Kiểm tra trạng thái đăng nhập và chuyển hướng về trang login.php nếu chưa đăng nhập.
+      + Hiển thị thông tin tài khoản (tên, giới tính, email, địa chỉ, số điện thoại) từ session.
+      + Có nút quay về trang chủ.
     - Ngôn ngữ:
-    + PHP: Quản lý session và hiển thị dữ liệu động.
-    + HTML/CSS: Thiết kế giao diện với font Quicksand, gradient nền, và hiệu ứng shadow.
+      + PHP: Quản lý session và hiển thị dữ liệu động.
+      + HTML/CSS: Thiết kế giao diện với font Quicksand, gradient nền, và hiệu ứng shadow.
 - h) `search.php`
     
     ```python
@@ -1070,14 +1064,14 @@ web/
     
     - File `search.php` cho phép người dùng tìm kiếm thông tin người dùng khác dựa trên username
     - Chức năng chính:
-    + Kiểm tra trạng thái đăng nhập, chuyển hướng về login.php nếu chưa đăng nhập.
-    + Hiển thị form tìm kiếm để nhập tên người dùng cần tìm.
-    + Tìm kiếm và hiển thị thông tin người dùng (ID, tên, giới tính, email, địa chỉ, số điện thoại) từ database.
-    + Nút quay về trang chủ.
+      + Kiểm tra trạng thái đăng nhập, chuyển hướng về login.php nếu chưa đăng nhập.
+      + Hiển thị form tìm kiếm để nhập tên người dùng cần tìm.
+      + Tìm kiếm và hiển thị thông tin người dùng (ID, tên, giới tính, email, địa chỉ, số điện thoại) từ database.
+      + Nút quay về trang chủ.
     - Ngôn ngữ:
     _ PHP: Quản lý session, truy vấn database, và xử lý tìm kiếm.
-    + HTML/CSS: Thiết kế giao diện với font Poppins, gradient nền, và hiệu ứng shadow.
-    + MySQL: Truy vấn bảng users để tìm kiếm người dùng.
+      + HTML/CSS: Thiết kế giao diện với font Poppins, gradient nền, và hiệu ứng shadow.
+      + MySQL: Truy vấn bảng users để tìm kiếm người dùng.
 - i) `logout.php`
     
     ```python
@@ -1090,8 +1084,8 @@ web/
     
     - File `logout.php` xử lý việc đăng xuất người dùng khỏi hệ thống.
     - Chức năng chính:
-    + Hủy toàn bộ session của người dùng hiện tại.
-    + Chuyển hướng người dùng về trang chủ (index.php) sau khi đăng xuất.
+      + Hủy toàn bộ session của người dùng hiện tại.
+      + Chuyển hướng người dùng về trang chủ (index.php) sau khi đăng xuất.
     - Ngôn ngữ: PHP
 
 ## IV. Hạn chế
